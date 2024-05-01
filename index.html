@@ -33,9 +33,9 @@
         <div class="max-width">  
             <a href="#head">Home</a>
             <a href="#about">About Us</a>
-            <a href="#committees">Committees</a>
+            <a href="#committeesBanner">Committees</a>
             <a href="#resources">Resources</a>
-            <a href="#register">Register</a>
+            <a href="#registrationBanner">Register</a>
             <a href="#contact">Contact Us</a>
         </div>
     </div>
@@ -53,11 +53,7 @@
         <h1>About Us</h1>
         <h2>Some text here</h2>
 
-        <!-- Long paragraph of boring filler text... -->
-        <br><p class="about-us-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <br><hr>
+        <br><hr width=30%>
 
         <!-- Icon Row 1-->
         <div class="row about-us-icons">
@@ -79,21 +75,19 @@
         </div>
         <!-- End Icon Row 1 -->
         <br>
+        <!-- Long paragraph of boring filler text... -->
+        <br><p class="about-us-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
     </section>
     <!-- End About -->
 
-    <section id="fillerBanner">
-        <h1> Title </h1>
-        <h2> Description </h2>
-    </section>
-
     <!-- Committees -->
+    <div id="committeesBanner">
+        <h1> OUR COMMITTEES </h1>
+        <h2> Lorem Ipsum Dolor Sit Amet</h2>
+    </div>
     <section class="committees container" id="committees">
-        <h1 class="center">OUR COMMITTEES</h1><br>
-        <h2 class="center">Some text here</h2>
-
-        <br><br><br>
-
         <div class="committee-list-element row fixed-width">
             <div class="col-md mode">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -124,9 +118,25 @@
     <!-- End Committees -->
 
     <!-- something about resources -->
-    <!-- something about registration -->
 
-
+    <!-- Registration -->
+    <div id="registrationBanner">
+        <h1> REGISTER TODAY! </h1>
+        <h2> Lorem Ipsum Dolor Sit Amet</h2>
+    </div>
+    <section class="register options container" id="register">
+        <div class="row fixed-width">
+            <div class="option-element col">
+                <center><h1>WORKSHOP</h1></center>
+                <img src="https://placehold.co/4000" height=100% width=100%>
+            </div>
+            <div class="option-element col">
+                <center><h1>ONLINE MUN</h1></center>
+                <img src="https://placehold.co/4000" height=100% width=100%>
+            </div>
+        </div>
+    </section>
+    <!-- End Registration -->
 
 
     <!---->
@@ -188,27 +198,9 @@
     </script>
     <!-- End Sticky Navbar Script -->
 
-    <!-- Vanta script for filler banner -->
-    <script src="js/bootstrap/three.r134.min.js"></script>
-    <script src="js/bootstrap/vanta.rings.min.js"></script>
-    <script>
-    VANTA.RINGS({
-        el: "#fillerBanner",
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00,
-        backgroundColor: 0x18223c,
-        color: 0x1a221a
-    })
-    </script>
-
 	<!-- Vanta script for header -->
-	<script src="js/bootstrap/three.r134.min.js"></script>
-	<script src="js/bootstrap/vanta.globe.min.js"></script>
+	<script src="js//three.r134.min.js"></script>
+	<script src="js/vanta.globe.min.js"></script>
 	<script>
 	VANTA.GLOBE({
         el: "#head",
