@@ -129,11 +129,10 @@ a:hover {
     display: block;
     color: white;
     text-align: center;
-    padding: 20px 25px;
+    padding: 24px 26px;
     text-decoration: none;
 	transition: all .5s ease-in;
-	cursor: pointer;
-    font-size: 20px;
+    font-size: 19px;
 }
 
 .topnav a:hover {
@@ -142,7 +141,7 @@ a:hover {
 }
 
 .topnav .icon {
-  display:none;
+  display: none;
 }
 
 @media screen and (max-width: 800px) {
@@ -202,11 +201,11 @@ a:hover {
 }
 
 #head {
-	margin-bottom: 0px;
-	padding: 20% 0px 20% 0px;
+	margin: 0;
+	padding: 21% 0px 21% 0px;
 	text-align: center;
 	color: white;
-	background: linear-gradient(90deg, rgba(236, 209, 105,.3) 0%, rgba(236, 209, 105,0.2) 50%, rgba(236, 209, 105,.3) 100%);
+	background: linear-gradient(90deg, rgba(29,174,234,.3) 0%, rgba(29,174,234,0.2) 50%, rgba(29,174,234,.3) 100%);
 }
 
 #head h1 {
@@ -237,8 +236,6 @@ a:hover {
 	margin: 10px;
 	padding-left: 9%;
 	padding-right: 9%;
-	font-weight: 200;
-	font-size: 20px;
 }
 
 #about .about {
@@ -287,8 +284,6 @@ a:hover {
 }
 
 #committees {
-	padding-left: 15%;
-	padding-right: 15%;
 	padding-top: 2%;
 	padding-bottom: 3%;
 }
@@ -308,7 +303,6 @@ a:hover {
 	padding-bottom: 2%;
 }
 #committees .committee-list-element img {
-	border-radius: 5%;
 	transition: transform .3s ease-in-out;
 }
 #committees .committee-list-element img:hover {
@@ -351,8 +345,8 @@ a:hover {
 }
 
 #register {
-	padding-left: 10%;
-	padding-right: 10%;
+	padding-top: 0%;
+	padding-bottom: 0%;
 }
 
 #register .options {
@@ -361,20 +355,19 @@ a:hover {
 	margin-top: 17px;
 }
 
-#register .option {
+#register .option-element {
 	padding-top: 2%;
 	padding-bottom: 2%;
 }
-#register .option img {
-	cursor: pointer;
+#register .option-element img {
 	position: relative;
 	transition: transform .2s ease-in;
 }
-#register .option img:hover {
+#register .option-element img:hover {
 	transform: scale(1.03);
 }
 
-#register .option .date-text {
+#register .option-element .date-text {
 	position: absolute;
 	top: 13%; 
 	left: 50%; 
@@ -383,7 +376,7 @@ a:hover {
 	color: #fff; 
 	font-weight: 600;
 	text-transform: uppercase;
-	width: 98.4%;
+	width: 97.5%;
 	padding: 0px 0px; 
 	font-size: 35px; 
 	text-align: center;
@@ -406,33 +399,15 @@ a:hover {
 }
 
 .go-to-top {
-	width: 1000px;
-	max-width: 5%;
+	height: 10%;
+	width: 5%;
+	z-index: 999;
 	position: fixed;
-	color: #fff;
-	cursor: pointer;
+	top: 90%;
+	left: .5%;
 	transition: all .2s ease-in;
 	opacity: 1;
-	top: 90%;
-	left: 1%;
-	z-index: 999;
 }
-@media screen and (max-width:1000px) {
-	.go-to-top {
-		max-width: 7%;
-	}
-}
-@media screen and (max-width:800px) {
-	.go-to-top {
-		max-width: 10%;
-	}
-}
-@media screen and (max-width:500px) {
-	.go-to-top {
-		max-width: 13%;
-	}
-}
-
 .go-to-top img {
 	border-radius: 10%;
 	height: 100%;
@@ -446,35 +421,6 @@ a:hover {
 	transform: translate(-50%, -50%);
 }
 
-#footer {
-	background-color: rgb(92, 80, 80);
-	color: white;
-	margin-top: 4%;
-}
-
-#footer a {
-	text-decoration: none;
-	transition: all .2s ease-in;
-	cursor: pointer;
-}
-
-#footer a:hover {
-	transform: scale(1.1);
-    color: #06d0d7;
-}
-
-.footer {
-	max-width: 100%;
-	margin: 0 auto;
-	float: center;
-	padding: 20px 25px;
-	text-align: center;
-}
-.footer p {
-	font-weight: 500;
-	font-size: 15px;
-}
-
 @media screen and (min-width: 800px) {
 	.res-img {
 		height: 320px;
@@ -483,8 +429,7 @@ a:hover {
 
 @media screen and (max-width: 799px) {
 	.res-img {
-		width: 100%;
-	}
+		width: 100%;	}
 }
 
 @media screen and (min-width: 800px) {
@@ -495,6 +440,5 @@ a:hover {
 
 @media screen and (max-width: 799px) {
 	.res-img-sm {
-		width: 100%;	
-	}
+		width: 100%;	}
 }
