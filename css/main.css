@@ -264,7 +264,7 @@ a:hover {
 
 #committeesBanner {
 	background: rgb(46,43,51);
-	background: linear-gradient(90deg, #242020 0%, rgba(29,174,234,.75) 50%, #242020 100%);
+	background: linear-gradient(90deg, #242020 0%, rgba(236, 209, 105,.75) 50%, #242020 100%);
 	margin-top: 1%;
 	padding: 60px 0px 60px 0px;
 	text-align: center;
@@ -326,7 +326,7 @@ a:hover {
 
 #registrationBanner {
 	background: rgb(46,43,51);
-	background: linear-gradient(90deg, #242020 0%, rgba(29,174,234,.75) 50%, #242020 100%);
+	background: linear-gradient(90deg, #242020 0%, rgba(236, 209, 105,.75) 50%, #242020 100%);
 	padding: 60px 0px 60px 0px;
 	text-align: center;
 }
@@ -380,7 +380,7 @@ a:hover {
 	padding: 0px 0px; 
 	font-size: 35px; 
 	text-align: center;
-	background: rgba(29,174,234,.75);
+	background: rgba(196, 171, 70,.90);
 }
 
 #register h1 {
