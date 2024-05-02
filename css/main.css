@@ -264,7 +264,7 @@ a:hover {
 
 #committeesBanner {
 	background: rgb(46,43,51);
-	background: linear-gradient(90deg, #242020 0%, rgba(29,174,234,1) 50%, #242020 100%);
+	background: linear-gradient(90deg, #242020 0%, rgba(29,174,234,.75) 50%, #242020 100%);
 	margin-top: 1%;
 	padding: 60px 0px 60px 0px;
 	text-align: center;
@@ -326,7 +326,7 @@ a:hover {
 
 #registrationBanner {
 	background: rgb(46,43,51);
-	background: linear-gradient(90deg, #242020 0%, rgba(29,174,234,1) 50%, #242020 100%);
+	background: linear-gradient(90deg, #242020 0%, rgba(29,174,234,.75) 50%, #242020 100%);
 	padding: 60px 0px 60px 0px;
 	text-align: center;
 }
@@ -360,10 +360,27 @@ a:hover {
 	padding-bottom: 2%;
 }
 #register .option-element img {
-	transition: transform .3s ease-out;
+	position: relative;
+	transition: transform .2s ease-in;
 }
 #register .option-element img:hover {
-	transform: scale(1.05);
+	transform: scale(1.03);
+}
+
+#register .option-element .date-text {
+	position: absolute;
+	top: 13%; 
+	left: 50%; 
+	transform: translate(-50%, -50%);
+	transition: all .1s ease-out;
+	color: #fff; 
+	font-weight: 600;
+	text-transform: uppercase;
+	width: 97.5%;
+	padding: 0px 0px; 
+	font-size: 35px; 
+	text-align: center;
+	background: rgba(29,174,234,.75);
 }
 
 #register h1 {
@@ -381,39 +398,20 @@ a:hover {
 	font-size: 20px;
 }
 
-footer {
-	background-color: rgb(36, 32, 32);
-	color: white;
-}
-
-footer a {
-	text-decoration: none;
-	color: #ffffff;
+.go-to-top {
+	height: 10%;
+	width: 5%;
+	z-index: 999;
+	position: fixed;
+	top: 90%;
+	left: .5%;
 	transition: all .2s ease-in;
+	opacity: 1;
 }
-
-footer a:hover {
-	text-decoration: none;
-	color: #244aac;
-	transition: all .2s ease-in;
-}
-
-.the-footer {
-	max-width: 1280px;
-	margin: 0 auto;
-	float: none;
-	padding-top: 30px;
-	padding-bottom: 30px;
-}
-
-.contact-info {
-	color: #ffffff;
-	margin: 0;
-	margin-bottom: 0;
-	padding: 0;
-	text-align: center;
-	transition: all .2s ease-in;
-	cursor: default;
+.go-to-top img {
+	border-radius: 10%;
+	height: 100%;
+	width: 100%;
 }
 
 .center {

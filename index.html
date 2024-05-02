@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>MUN WEBSITE</title>
@@ -22,6 +23,9 @@
         <!-- Bootstrap -->
         <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-grid.min.css">
         <link rel="stylesheet" type="text/css" href="js/bootstrap/bootstrap.min.js">
+
+        <!-- JQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
@@ -127,21 +131,130 @@
     <section class="register options container" id="register">
         <div class="row fixed-width">
             <div class="option-element col">
-                <center><h1>WORKSHOP</h1></center>
-                <img src="https://placehold.co/4000" height=100% width=100%>
+                <center><h1>ONLINE MUN</h1></center>
+                <img id="mun-registration-button" src="https://placehold.co/4000" height=100% width=100%>
+                <div id="mun-date" class="date-text">COMING SOON!</div>
             </div>
             <div class="option-element col">
-                <center><h1>ONLINE MUN</h1></center>
-                <img src="https://placehold.co/4000" height=100% width=100%>
+                <center><h1>WORKSHOP</h1></center>
+                <img id="workshop-registration-button" src="https://placehold.co/4000" height=100% width=100%>
+                <div id="workshop-date" class="date-text">COMING SOON!</div>
             </div>
         </div>
     </section>
     <!-- End Registration -->
 
+    <!-- Go to top button -->
+    <div class="go-to-top" id="go-to-top">
+        <img src="https://placehold.co/128">
+    </div>
+    <!-- End go to top button -->
 
     <!---->
     <!-- SCRIPT SECTION -->
     <!---->
+
+    <!-- registration section thingy -->
+    <script>
+        var munRegistrationButton = document.getElementById("mun-registration-button");
+        var workshopRegistrationButton = document.getElementById("workshop-registration-button");
+        var munDate = document.getElementById("mun-date");
+        var workshopDate = document.getElementById("workshop-date");
+        munDate.style.opacity = 0;
+        workshopDate.style.opacity = 0;
+
+        let id = null, pos = 0;
+        munRegistrationButton.onmouseover = function() {
+            clearInterval(id);
+            id = setInterval(frame, 5);
+            pos = 0;
+
+            var fitr = true;
+            function frame() {
+                if (fitr) {
+                    munDate.style.opacity = 1;
+                    fitr = false;
+                }
+                if (pos >= 10) {
+                    clearInterval(id);
+                } else {
+                    pos += 1;
+                    munDate.style.top = 8.1+pos+'%';
+                }
+            }
+            
+        }
+        munRegistrationButton.onmouseout = function() {
+            clearInterval(id);
+            id = setInterval(frame2, 5);
+            pos = parseInt(munDate.style.top.substring(0,munDate.style.top.length -1));
+
+            function frame2() {
+                if (pos <= 0) {
+                    clearInterval(id);
+                    munDate.style.opacity = 0;
+                } else {
+                    pos -= 1;
+                    munDate.style.top = 13+pos+'%';
+                }
+            }
+        }
+
+        let id2 = null, pos2 = 0;
+        workshopRegistrationButton.onmouseover = function() {
+            clearInterval(id2);
+            id2 = setInterval(frame, 5);
+            pos2 = 0;
+
+            var fitr = true;
+            function frame() {
+                if (fitr) {
+                    workshopDate.style.opacity = 1;
+                    fitr = false;
+                }
+                if (pos2 >= 10) {
+                    clearInterval(id2);
+                } else {
+                    pos2 += 1;
+                    workshopDate.style.top = 8.1+pos2+'%';
+                }
+            }
+            
+        }
+        workshopRegistrationButton.onmouseout = function() {
+            clearInterval(id2);
+            id2 = setInterval(frame2, 5);
+            pos2 = parseInt(workshopDate.style.top.substring(0,workshopDate.style.top.length -1));
+
+            function frame2() {
+                if (pos2 <= 0) {
+                    clearInterval(id2);
+                    workshopDate.style.opacity = 0;
+                } else {
+                    pos2 -= 1;
+                    workshopDate.style.top = 13+pos2+'%';
+                }
+            }
+        }
+    </script>
+
+    <!-- go to top button -->
+    <script>
+        var goToTop = document.getElementById("go-to-top");
+        goToTop.style.opacity = 0;
+        window.onscroll = function() {
+            if (window.pageYOffset > window.innerHeight) {
+                goToTop.style.opacity = 1;
+            } else {
+                goToTop.style.opacity = 0;
+            }
+        }
+
+        goToTop.onclick = function() {
+            console.log("ABC");
+            window.scrollTo(0,0);
+        }
+    </script>
 
     <!-- Navbar Dropdown Script -->
 	<script>
@@ -157,7 +270,6 @@
 	<!-- End Navbar Dropdown Script -->
 
 	<!-- Smooth Scrolling Script -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
         var navbar = document.getElementById("navbar")
 		$(document).ready(function(){
@@ -171,7 +283,7 @@
 		      var hash = this.hash;
 
 		      $('html, body').animate({
-		        scrollTop: $(hash).offset().top - 55
+		        scrollTop: $(hash).offset().top - navbar.clientHeight
 		      }, 100, function(){
 
 		        window.location.hash = hash;
@@ -183,23 +295,25 @@
 	<!-- End Smooth Scrolling Script -->
 
     <!-- Sticky Navbar Script -->
+    <!--
     <script>
         window.onscroll = function() {stickyNavbar()};
         var navbar = document.getElementById("navbar");
         var sticky = navbar.offsetTop;
 
         function stickyNavbar() {
-            if (window.pageYOffset >= sticky ) {
+            if (window.pageYOffset >= sticky) {
                 navbar.classList.add("sticky");
             } else {
                 navbar.classList.remove("sticky");
             }
         }
     </script>
+    -->
     <!-- End Sticky Navbar Script -->
 
 	<!-- Vanta script for header -->
-	<script src="js//three.r134.min.js"></script>
+	<script src="js/three.r134.min.js"></script>
 	<script src="js/vanta.globe.min.js"></script>
 	<script>
 	VANTA.GLOBE({
@@ -207,10 +321,10 @@
         mouseControls: true,
         touchControls: true,
         gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.0,
-        scaleMobile: 1.00,
+        minHeight: document.getElementById("head").clientHeight,
+        minWidth: document.getElementById("head").clientWidth,
+        scale: 1,
+        scaleMobile: 1,
         backgroundColor: 0x3d3535,
         color: 0xFFFFF,
         color2: 0xFFFFFF,
