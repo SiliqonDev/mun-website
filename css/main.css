@@ -145,7 +145,7 @@ a:hover {
   display:none;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1200px) {
   .topnav a:not(:first-child) {display: none;}
   .topnav a.icon {
     float: right;
@@ -153,7 +153,7 @@ a:hover {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1200px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
     position: absolute;
@@ -167,7 +167,7 @@ a:hover {
   }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1200px) {
   div .max-width {
     max-width: 60%;
     margin: 0 auto;
@@ -230,13 +230,12 @@ a:hover {
 #about .about-us-icons {
 	max-width: 1280px;
 	margin: 0 auto;
-	padding-top: 50px;
+	padding-top: 30px;
 }
 
 #about .about-us-text {
-	margin: 10px;
-	padding-left: 9%;
-	padding-right: 9%;
+	padding-left: 7%;
+	padding-right: 7%;
 	font-weight: 200;
 	font-size: 20px;
 }
@@ -265,6 +264,24 @@ a:hover {
 	font-size: 18px;
 }
 
+@media screen and (max-width: 600px) {
+	#about {
+		.about-us-element {
+			padding-bottom: 7%;
+		}
+		.about-us-text {
+			padding-top: 0;
+			padding-bottom: 5%;
+		}
+		h1 {
+			font-size: 35px;
+		}
+		h2 {
+			font-size: 20px;
+		}
+	}
+}
+
 #committeesBanner {
 	background: rgb(46,43,51);
 	background: linear-gradient(90deg, #242020 0%, rgba(236, 209, 105,.75) 50%, #242020 100%);
@@ -284,6 +301,17 @@ a:hover {
 	margin-top: 5px;
 	font-size: 30px;
 	color: white;
+}
+
+@media screen and (max-width:600px) {
+	#committeesBanner {
+		h1 {
+			font-size: 35px;
+		}
+		h2 {
+			font-size: 25px;
+		}
+	}
 }
 
 #committees {
@@ -330,6 +358,23 @@ a:hover {
 	font-size: 20px;
 }
 
+@media screen and (max-width:800px) {
+	#committees {
+		p {
+			font-size: 17px;
+		}
+	}
+	#committees .committee-list-element {
+		padding-top: 5%;
+		padding-bottom: 5%;
+		img {
+			padding-top: 10%;
+			padding-bottom: 10%;
+			border-radius: 0;
+		}
+	}
+}
+
 #registrationBanner {
 	background: rgb(46,43,51);
 	background: linear-gradient(90deg, #242020 0%, rgba(236, 209, 105,.75) 50%, #242020 100%);
@@ -348,6 +393,16 @@ a:hover {
 	margin-top: 5px;
 	font-size: 30px;
 	color: white;
+}
+@media screen and (max-width:600px) {
+	#registrationBanner {
+		h1 {
+			font-size: 35px;
+		}
+		h2 {
+			font-size: 25px;
+		}
+	}
 }
 
 #register {
@@ -376,18 +431,24 @@ a:hover {
 
 #register .option .date-text {
 	position: absolute;
-	top: 13%; 
 	left: 50%; 
 	transform: translate(-50%, -50%);
 	transition: all .1s ease-out;
 	color: #fff; 
 	font-weight: 600;
 	text-transform: uppercase;
-	width: 98.4%;
+	width: 98%;
 	padding: 0px 0px; 
 	font-size: 35px; 
 	text-align: center;
 	background: rgba(196, 171, 70,.90);
+}
+
+@media screen and (max-width: 800px) {
+	#register .option .date-text {
+		font-size: 20px;
+		width: 90%;
+	}	
 }
 
 #register h1 {
@@ -489,12 +550,12 @@ a:hover {
 
 @media screen and (min-width: 800px) {
 	.res-img-sm {
-		height: 100px;
+		height: 128px;
 	}
 }
 
 @media screen and (max-width: 799px) {
 	.res-img-sm {
-		width: 100%;	
+		width: 45%;	
 	}
 }

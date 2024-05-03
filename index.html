@@ -40,7 +40,7 @@
             <a href="#resources">Resources</a>
             <a href="#registrationBanner">Register</a>
             <a href="#contact">Contact Us</a>
-            <a href="javascript:void(0);" style="font-size:20px;" class="icon" onclick="myFunction()">☰</a>
+            <a href="javascript:void(0);" style="font-size:20px;" class="icon" onclick="navbarDropdownChange()">☰</a>
         </div>
     </div>
     <!-- End Navbar -->
@@ -60,18 +60,18 @@
         <br><hr width=30%>
 
         <!-- Icon Row 1-->
-        <div class="row about-us-icons">
-            <div class="col">
+        <div class="container row about-us-icons">
+            <div class="about-us-element col-sm-4">
                 <img class="res-img-sm" src="https://placehold.co/64">
                 <h2>Title 1</h2>
                 <p>Description 1</p>
             </div>
-            <div class="col">
+            <div class="about-us-element col-sm-4">
                 <img class="res-img-sm" src="https://placehold.co/64">
                 <h2>Title 2</h2>
                 <p>Description 2</p>
             </div>
-            <div class="col">
+            <div class="about-us-element col-sm-4">
                 <img class="res-img-sm" src="https://placehold.co/64">
                 <h2>Title 3</h2>
                 <p>Description 3</p>
@@ -132,11 +132,19 @@
         <div class="row fixed-width">
             <div class="option col">
                 <center><h1>ONLINE MUN</h1></center>
+            </div>
+            <div class="option col">
+                <center><h1>WORKSHOP</h1></center>
+            </div>
+        </div>
+        <div class="row fixed-width">
+            <div class="option col">
+                
                 <img id="mun-registration-button" src="https://placehold.co/1000" height=100% width=100%>
                 <div id="mun-date" class="date-text">COMING SOON!</div>
             </div>
             <div class="option col">
-                <center><h1>WORKSHOP</h1></center>
+                
                 <img id="workshop-registration-button" src="https://placehold.co/1000" height=100% width=100%>
                 <div id="workshop-date" class="date-text">COMING SOON!</div>
             </div>
@@ -159,7 +167,7 @@
     <!---->
     <!-- SCRIPT SECTION -->
     <!---->
-
+    
     <!-- registration section thingy -->
     <script>
         var munRegistrationButton = document.getElementById("mun-registration-button");
@@ -187,11 +195,11 @@
                     munDate.style.opacity = 1;
                     fitr = false;
                 }
-                if (pos >= 10) {
+                if (pos >= 6) {
                     clearInterval(id);
                 } else {
                     pos += 1;
-                    munDate.style.top = 7.1+pos+'%';
+                    munDate.style.top = pos+'%';
                 }
             }
             
@@ -207,7 +215,7 @@
                     munDate.style.opacity = 0;
                 } else {
                     pos -= 1;
-                    munDate.style.top = 13+pos+'%';
+                    munDate.style.top = pos+'%';
                 }
             }
         }
@@ -224,11 +232,11 @@
                     workshopDate.style.opacity = 1;
                     fitr = false;
                 }
-                if (pos2 >= 10) {
+                if (pos2 >= 6) {
                     clearInterval(id2);
                 } else {
                     pos2 += 1;
-                    workshopDate.style.top = 7.1+pos2+'%';
+                    workshopDate.style.top = pos2+'%';
                 }
             }
             
@@ -244,7 +252,7 @@
                     workshopDate.style.opacity = 0;
                 } else {
                     pos2 -= 1;
-                    workshopDate.style.top = 13+pos2+'%';
+                    workshopDate.style.top = pos2+'%';
                 }
             }
         }
@@ -269,7 +277,7 @@
 
     <!-- Navbar Dropdown Script -->
 	<script>
-		function myFunction() {
+		function navbarDropdownChange() {
 		    var x = document.getElementById("navbar");
 		    if (x.className === "topnav") {
 		        x.className += " responsive";
@@ -294,7 +302,7 @@
 		      var hash = this.hash;
 
 		      $('html, body').animate({
-		        scrollTop: $(hash).offset().top - navbar.clientHeight
+		        scrollTop: $(hash).offset().top
 		      }, 100, function(){
 
 		        window.location.hash = hash;
@@ -327,7 +335,7 @@
 	<script src="js/three.r134.min.js"></script>
 	<script src="js/vanta.globe.min.js"></script>
 	<script>
-	VANTA.GLOBE({
+	const globeBackground = VANTA.GLOBE({
         el: "#head",
         mouseControls: true,
         touchControls: true,
@@ -341,6 +349,14 @@
         color2: 0xE0C350,
         points: 15,
 	})
+
+    window.onresize = function() {
+        globeBackground.setOptions({
+            minHeight: document.getElementById("head").clientHeight,
+            minWidth: document.getElementById("head").clientWidth,
+        })
+        globeBackground.resize();
+    }
 	</script>
 
     </body>
