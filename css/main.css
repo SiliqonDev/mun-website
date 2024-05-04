@@ -219,6 +219,17 @@ a:hover {
 	font-size: 45px;
 	text-transform: uppercase;
 }
+@media screen and (max-width: 600px) {
+	#head {
+		h1 {
+			font-size: 55px;
+		}
+		h3 {
+			font-size: 35px;
+			padding-bottom: 15%;
+		}
+	}
+}
 
 #about {
 	margin: 10px;
