@@ -17,7 +17,6 @@ html,body {
 }
 
 hr {
-	max-width: 1000px;
 	color: #718093;
 }
 
@@ -115,10 +114,12 @@ a:hover {
 /* Navbar */
 
 .topnav {
+	position: relative;
+	z-index: 999;
 	list-style-type: none;
     overflow: hidden;
     background-color: rgb(92, 80, 80);
-    box-shadow: 0px 6px 13px -7px rgba(0,0,0,0.20);
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,.5);
     transition: all .2s ease-in;
     font-weight: 700;
     text-transform: uppercase;
@@ -235,19 +236,18 @@ a:hover {
 	margin: 10px;
 	text-align: center;
 	padding-top: 10px;
-	padding-bottom: 10px;
 }
 
 #about .about-us-icons {
 	max-width: 1280px;
 	margin: 0 auto;
-	padding-top: 30px;
+	padding-top: 20px;
 }
 
 #about .about-us-text {
 	padding-left: 7%;
 	padding-right: 7%;
-	font-weight: 200;
+	font-weight: 300;
 	font-size: 20px;
 }
 
@@ -274,6 +274,19 @@ a:hover {
 	margin-top: 3px;
 	font-size: 18px;
 }
+@media screen and (max-width: 600px) {
+	#about {
+		h2 {
+			font-size: 20px;
+		}
+		p {
+			font-size: 15px;
+		}
+		.about-us-text {
+			font-size: 16px;
+		}
+	}
+}
 
 @media screen and (max-width: 600px) {
 	#about {
@@ -297,8 +310,13 @@ a:hover {
 	background: rgb(46,43,51);
 	background: linear-gradient(90deg, #242020 0%, rgba(236, 209, 105,.75) 50%, #242020 100%);
 	margin-top: 1%;
-	padding: 60px 0px 60px 0px;
+	padding: 50px 0px 50px 0px;
 	text-align: center;
+}
+@media screen and (max-width: 600px) {
+	#committeesBanner {
+		padding: 40px 0px 40px 0px;
+	}
 }
 
 #committeesBanner h1 {
@@ -332,8 +350,10 @@ a:hover {
 	padding-bottom: 3%;
 }
 
-#committees p {
-	padding-left: 1%;
+@media screen and (max-width: 800px) {
+	#committees hr {
+		width: 70%;
+	}
 }
 
 #committees .committees {
@@ -342,16 +362,50 @@ a:hover {
 	margin-top: 17px;
 }
 
-#committees .committee-list-element {
+#committees .committee {
+	border-radius: 25px;
+	z-index: 999;
+	position: relative;
 	padding-top: 2%;
 	padding-bottom: 2%;
+	transition: all 1s ease;
 }
-#committees .committee-list-element img {
-	border-radius: 5%;
-	transition: transform .3s ease-in-out;
+#committees .committee:hover {
+	border-radius: 10px;
+	background-color: #242020;
+	box-shadow: 0 4px 8px 0 rgba(236, 209, 105,.75), 0 6px 20px 0 rgba(236, 209, 105,.75);
+	transform: scale(1.06);
+
+	img {
+		border-radius: 5px;
+	}
 }
-#committees .committee-list-element img:hover {
-	transform: scale(1.03);
+
+#committees .committee p {
+	font-size: 20px;
+	padding-left: 1%;
+}
+@media screen and (max-width: 1200px) {
+	#committees .committee p {
+		font-size: 17px;
+	}
+}
+@media screen and (max-width: 1000px) {
+	#committees .committee p {
+		font-size: 14px;
+	}
+}
+@media screen and (max-width: 650px) {
+	#committees .committee p {
+		font-size: 13px;
+	}
+}
+
+#committees .committee img {
+	border-radius: 10px;
+	transition: all 1s ease;
+	margin-right: 10px;
+	margin-left: 10px;
 }
 
 #committees h1 {
@@ -364,33 +418,28 @@ a:hover {
 	font-size: 25px;
 }
 
-#committees p {
-	margin-top: 3px;
-	font-size: 20px;
-}
-
 @media screen and (max-width:800px) {
 	#committees {
 		p {
 			font-size: 17px;
 		}
 	}
-	#committees .committee-list-element {
-		padding-top: 5%;
-		padding-bottom: 5%;
-		img {
-			padding-top: 10%;
-			padding-bottom: 10%;
-			border-radius: 0;
-		}
+	#committees .committee {
+		padding-top: 2%;
+		padding-bottom: 2%;
 	}
 }
 
 #registrationBanner {
 	background: rgb(46,43,51);
 	background: linear-gradient(90deg, #242020 0%, rgba(236, 209, 105,.75) 50%, #242020 100%);
-	padding: 60px 0px 60px 0px;
+	padding: 50px 0px 50px 0px;
 	text-align: center;
+}
+@media screen and (max-width: 600px) {
+	#registrationBanner {
+		padding: 40px 0px 40px 0px;
+	}
 }
 
 #registrationBanner h1 {
@@ -431,12 +480,40 @@ a:hover {
 	padding-top: 2%;
 	padding-bottom: 2%;
 }
+
+#register .option-title {
+	padding-top: 2%;
+	font-size: 45px;
+}
+@media screen and (max-width:1000px) {
+	#register .option-title {
+		font-size: 35px;
+	}
+}
+@media screen and (max-width:800px) {
+	#register .option-title {
+		font-size: 27px;
+	}
+}
+@media screen and (max-width:600px) {
+	#register .option-title {
+		font-size: 20px;
+	}
+}
+@media screen and (max-width:600px) {
+	#register .option-title {
+		font-size: 17px;
+	}
+}
+
 #register .option img {
+	border-radius: 20px;
 	cursor: pointer;
 	position: relative;
-	transition: transform .2s ease-in;
+	transition: all .2s ease-in;
 }
 #register .option img:hover {
+	border-radius: 10px;
 	transform: scale(1.03);
 }
 
@@ -460,21 +537,6 @@ a:hover {
 		font-size: 20px;
 		width: 90%;
 	}	
-}
-
-#register h1 {
-	font-size: 40px;
-	font-weight: 700;
-	text-transform: uppercase;
-}
-
-#register h2 {
-	font-size: 25px;
-}
-
-#register p {
-	margin-top: 3px;
-	font-size: 20px;
 }
 
 .go-to-top {
@@ -547,16 +609,8 @@ a:hover {
 	font-size: 15px;
 }
 
-@media screen and (min-width: 800px) {
-	.res-img {
-		height: 320px;
-	}
-}
-
-@media screen and (max-width: 799px) {
-	.res-img {
-		width: 100%;
-	}
+.res-img {
+	width: 100%;
 }
 
 @media screen and (min-width: 800px) {
@@ -567,6 +621,6 @@ a:hover {
 
 @media screen and (max-width: 799px) {
 	.res-img-sm {
-		width: 45%;	
+		width: 100%;	
 	}
 }
