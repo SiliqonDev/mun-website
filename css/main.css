@@ -10,10 +10,12 @@ html{
 }
 
 html,body {
+	height:100%;
 	font-family: 'PT Sans', sans-serif;
 	margin: 0;
 	padding: 0;
 	scroll-behavior: smooth;
+	transition: all 1s ease;
 }
 
 hr {
@@ -30,12 +32,6 @@ h1,h2,h3,h4,h5,h6 {
 	font-family: 'PT Sans', sans-serif;
 	margin: 0;
 	padding: 0;
-}
-
-.sticky {
-	position: fixed;
-	top: 0;
-	width: 100%;
 }
 
 .parallax {
@@ -235,13 +231,13 @@ a:hover {
 #about {
 	margin: 10px;
 	text-align: center;
-	padding-top: 10px;
+	margin-top: 10px;
 }
 
 #about .about-us-icons {
 	max-width: 1280px;
 	margin: 0 auto;
-	padding-top: 20px;
+	margin-top: 20px;
 }
 
 #about .about-us-text {
@@ -284,6 +280,8 @@ a:hover {
 		}
 		.about-us-text {
 			font-size: 16px;
+			padding-left: 2%;
+			padding-right: 2%;
 		}
 	}
 }
@@ -363,18 +361,18 @@ a:hover {
 }
 
 #committees .committee {
-	border-radius: 25px;
-	z-index: 999;
+	border-radius: 50px;
 	position: relative;
 	padding-top: 2%;
 	padding-bottom: 2%;
-	transition: all 1s ease;
+	transition: transform 1s ease, background-color 1s ease, border-radius 1s ease, box-shadow .9s ease;
 }
 #committees .committee:hover {
-	border-radius: 10px;
+	z-index: 999;
+	border-radius: 20px;
 	background-color: #242020;
-	box-shadow: 0 4px 8px 0 rgba(236, 209, 105,.75), 0 6px 20px 0 rgba(236, 209, 105,.75);
-	transform: scale(1.06);
+	box-shadow: 0 4px 8px 0 rgba(236, 209, 105,.75), 0 -4px 8px 0 rgba(236, 209, 105,.75), 0 6px 20px 0 rgba(236, 209, 105,.75), 0 0 0 max(100vh, 100vw) rgba(0, 0, 0, .5);
+	transform: scale(1.05);
 
 	img {
 		border-radius: 5px;
@@ -383,7 +381,7 @@ a:hover {
 
 #committees .committee p {
 	font-size: 20px;
-	padding-left: 1%;
+	margin-top: 7%;
 }
 @media screen and (max-width: 1200px) {
 	#committees .committee p {
@@ -395,6 +393,12 @@ a:hover {
 		font-size: 14px;
 	}
 }
+@media screen and (max-width: 800px) {
+	#committees .committee p {
+		margin-top: 2%;
+		text-align: center;
+	}
+}
 @media screen and (max-width: 650px) {
 	#committees .committee p {
 		font-size: 13px;
@@ -402,10 +406,11 @@ a:hover {
 }
 
 #committees .committee img {
+	display:block;
 	border-radius: 10px;
 	transition: all 1s ease;
-	margin-right: 10px;
-	margin-left: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 #committees h1 {
@@ -581,6 +586,7 @@ a:hover {
 }
 
 #footer {
+	box-shadow: 0 -4px 10px 0 rgba(0,0,0,.5);
 	background-color: rgb(92, 80, 80);
 	color: white;
 	margin-top: 4%;
