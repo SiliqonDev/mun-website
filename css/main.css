@@ -34,14 +34,6 @@ h1,h2,h3,h4,h5,h6 {
 	padding: 0;
 }
 
-.parallax {
-    height: 100%; 
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 a {
 	text-decoration: none;
 	color: #5352ed;
@@ -54,58 +46,6 @@ a:hover {
 	transition: all .2s ease-in;
 }
 
-/* CSS */
-.custom_button {
-  background-color: #3DD1E7;
-  border: 0 solid #E5E7EB;
-  box-sizing: border-box;
-  color: #000000;
-  display: flex;
-  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-  font-size: 1rem;
-  font-weight: 700;
-  justify-content: center;
-  line-height: 1.75rem;
-  padding: .75rem 1.65rem;
-  position: relative;
-  text-align: center;
-  text-decoration: none #000000 solid;
-  text-decoration-thickness: auto;
-  width: 100%;
-  max-width: 460px;
-  position: relative;
-  cursor: pointer;
-  transform: rotate(-2deg);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-.custom_button:focus {
-  outline: 0;
-}
-
-.custom_button:after {
-  content: '';
-  position: absolute;
-  border: 1px solid #000000;
-  bottom: 4px;
-  left: 4px;
-  width: calc(100% - 1px);
-  height: calc(100% - 1px);
-}
-
-.custom_button:hover:after {
-  bottom: 2px;
-  left: 2px;
-}
-
-@media (min-width: 768px) {
-  .custom_button {
-    padding: 0.75rem 3rem;
-    font-size: 1.25rem;
-  }
-}
 
 /* Navbar */
 
@@ -134,7 +74,7 @@ a:hover {
 }
 
 .topnav a:hover {
-	transform: scale(1.1);
+	transform: scale(1.05);
     color: #06d0d7;
 }
 
@@ -305,8 +245,8 @@ a:hover {
 }
 
 #committeesBanner {
-	background: rgb(46,43,51);
 	background: linear-gradient(90deg, #242020 0%, rgba(236, 209, 105,.75) 50%, #242020 100%);
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,.5), 0 -2px 4px 0 rgba(0,0,0,.5);
 	margin-top: 1%;
 	padding: 50px 0px 50px 0px;
 	text-align: center;
@@ -365,17 +305,22 @@ a:hover {
 	position: relative;
 	padding-top: 2%;
 	padding-bottom: 2%;
-	transition: transform 1s ease, background-color 1s ease, border-radius 1s ease, box-shadow .9s ease;
+	transition: transform 1s ease, background-color 1s ease, border-radius 1s ease, box-shadow .75s ease;
 }
 #committees .committee:hover {
 	z-index: 999;
 	border-radius: 20px;
 	background-color: #242020;
 	box-shadow: 0 4px 8px 0 rgba(236, 209, 105,.75), 0 -4px 8px 0 rgba(236, 209, 105,.75), 0 6px 20px 0 rgba(236, 209, 105,.75), 0 0 0 max(100vh, 100vw) rgba(0, 0, 0, .5);
-	transform: scale(1.05);
+	transform: scale(1.03);
 
 	img {
-		border-radius: 5px;
+		box-shadow: inset 0px 0px 3px 1px rgb(136, 10, 10);
+		border-radius: 10px;
+	}
+
+	@media screen and (max-width: 800px) {
+		transform: scale(1.05);
 	}
 }
 
@@ -406,11 +351,8 @@ a:hover {
 }
 
 #committees .committee img {
-	display:block;
-	border-radius: 10px;
+	border-radius: 20px;
 	transition: all 1s ease;
-	margin-top: 10px;
-	margin-bottom: 10px;
 }
 
 #committees h1 {
@@ -436,13 +378,14 @@ a:hover {
 }
 
 #registrationBanner {
-	background: rgb(46,43,51);
 	background: linear-gradient(90deg, #242020 0%, rgba(236, 209, 105,.75) 50%, #242020 100%);
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,.5), 0 -2px 4px 0 rgba(0,0,0,.5);
 	padding: 50px 0px 50px 0px;
 	text-align: center;
 }
 @media screen and (max-width: 600px) {
 	#registrationBanner {
+		box-shadow: 0 2px 4px 0 rgba(0,0,0,.5), 0 -1px 2px 0 rgba(0,0,0,.5);
 		padding: 40px 0px 40px 0px;
 	}
 }
